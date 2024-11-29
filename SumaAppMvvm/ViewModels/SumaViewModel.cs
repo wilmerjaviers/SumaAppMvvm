@@ -6,7 +6,7 @@ namespace SumaAppMvvm.ViewModels
     public partial class SumaViewModel : ObservableObject
     {
         [ObservableProperty]
-        private string _valueA; // Cambiado a string para manejar placeholders vacíos.
+        private string _valueA;
 
         [ObservableProperty]
         private string _valueB;
@@ -30,7 +30,7 @@ namespace SumaAppMvvm.ViewModels
                     return;
                 }
 
-                // Validar si ValueB está vacío o no es un número
+                
                 if (string.IsNullOrWhiteSpace(ValueB) || !double.TryParse(ValueB, out double valueB))
                 {
                     await ShowAlert("El segundo valor está vacío. Por favor, ingrese un número válido.");
