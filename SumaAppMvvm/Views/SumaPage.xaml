@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SumaAppMvvm.Views.SumaPage"
+             xmlns:viewModel="clr-namespace:SumaAppMvvm.ViewModels"
+             x:DataType="viewModel:SumaViewModel"       
+             Title="SumaPage">
+    <VerticalStackLayout>
+        <Label Text="Ingresa los valores a sumar" FontSize="Title" Padding="30,10,30,10" />
+
+        <Entry Placeholder="Ingresa primer Valor" Keyboard="Numeric" Text="{Binding ValueA}" />
+        <Entry Placeholder="Ingresa segundo Valor" Keyboard="Numeric" Text="{Binding ValueB}" />
+
+        <Button Text="Sumar" Command="{Binding SumCommand}" Margin="30" />
+
+        <Label Text="{Binding Result, StringFormat='El resultado es: {0}'}" FontSize="Title" />
+
+        <Button Text="Limpiar" Command="{Binding ClearCommand}" Margin="30" />
+    </VerticalStackLayout>
+</ContentPage>
